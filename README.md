@@ -1,1 +1,1 @@
-# smu_java
+# syj_java
