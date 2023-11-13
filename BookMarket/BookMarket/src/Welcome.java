@@ -3,10 +3,21 @@ import java.util.Scanner;
 public class Welcome {
 	static final int NUM_BOOK = 3;
 	static final int NUM_ITEM = 7;
+	static CartItem[] mCartItem = new CartItem[NUM_BOOK];
+	static int mCartCount = 0;
 	
+	public static boolean isCartInBook(String bookId) {
+		boolean flag = false;
+		for (int i = 0; i < mCartCount; i++) {
+			if (bookId == mCartItem[i].getBookID()) {
+				mCartItem[i].setQuantity(mCartItem[i].getQuantity()+1);
+				flag = true;
+			}
+		}
+		return flag;
+	}
 	public static void main(String[] args) {
 		String[][] mBook = new String[NUM_BOOK][NUM_ITEM];
-		
 		String welcome_shoppingmall = "welcome to shopping mall!";
 		String welcome_bookmarket = "welcome to bookmarket!";
 		Scanner input = new Scanner(System.in);
@@ -83,10 +94,21 @@ public class Welcome {
 	}
 	public static void menuGuestInfo(String name, int mobile) {
 		System.out.println("현재 고객 정보 : ");
-		System.out.println("이름 : "+ name+ " 연락처 : "+mobile);
+		//System.out.println("이름 : "+ name+ " 연락처 : "+mobile);
+		Person person = new Person(name, mobile);
+		System.out.println("이름 "+person.getNmae()+" 연락처 "+person.getPhone());
 	}
 	public static void menuCartItemList() {
-		System.out.println("2. 장바구니의 장품 목록 보기");
+		System.out.println("장바구니 장품 목록");
+		System.out.println("-----------------------------");
+		System.out.println("    도서ID \t|    수량 \t|    합계");
+		for (int i = 0; i < mCartCount; i++) {
+			System.out.print("    "+mCartItem[i].getBookID() + " \t| ");
+			System.out.print("    "+mCartItem[i].getQuantity() + " \t| ");
+			System.out.print("    "+mCartItem[i].getTotalPrice());
+			System.out.println("    ");
+		}
+		System.out.println("\n-----------------------------");
 	}
 	public static void menuCartClear() {
 		System.out.println("3. 장바구니 비우기 : ");
@@ -126,13 +148,16 @@ public class Welcome {
 				str = input.nextLine();
 				if (str.toUpperCase().equals("Y")) {
 					System.out.println(book[numId][0]+ " 도서가 장바구니에 추가되었습니다.");
+					if (!isCartInBook(book[numId][0])){
+						mCartItem[mCartCount++] = new CartItem(book[numId]);
+					}
+					
 				}
 				
 				quit = true;
-			}
-			else {
+			} else 
 				System.out.println("다시 입력해주세요");
-			}
+			
 		}
 		
 		
@@ -174,4 +199,7 @@ public class Welcome {
 		book[2][5] = "컴퓨터 입문";
 		book[2][6] = "2019/06/10";
 	}
+
 }
+
+

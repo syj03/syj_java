@@ -1,11 +1,42 @@
-<<<<<<< HEAD:220911/230911/src/Person.java
 
 public class Person {
 
-}
-=======
+	private String name;
+	private int phone;
+	private String address;
+	
+	public Person(String name, int phone) {
+		this.name = name;
+		this.phone = phone;
+		
+	}
+	
+	public Person(String name, int phone, String address) {
+		this.name = name;
+		this.phone = phone;
+		this.address = address;
+	}
+	
+	public String getNmae() {
+		return name;
+	}
+	public void setNmae(String name) {
+		this.name = name;
+	}
+	public int getPhone() {
+	    return phone;
+	}
+	public void setPhone(int phone) {
+	    this.phone = phone;
+	}
+	public String getAddress() {
+	    return address;
+	}
 
-public class Person {
+	public void setAddress(String address) {
+	    this.address = address;
+	}
 
+
+	
 }
->>>>>>> 33fb9f2 ('231113'):BookMarket/BookMarket/src/Person.java
