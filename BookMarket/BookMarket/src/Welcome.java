@@ -15,6 +15,8 @@ public class Welcome {
 			}
 		}
 		return flag;
+		
+	static User mUser;
 	}
 	public static void main(String[] args) {
 		String[][] mBook = new String[NUM_BOOK][NUM_ITEM];
@@ -25,6 +27,7 @@ public class Welcome {
 		String userName = input.next();
 		System.out.print("연락처를 입력하세요: ");
 		int userMobile = input.nextInt();
+		mUser = new User(userName,userMobile);
 		boolean quit = false;
 		
 		
@@ -95,8 +98,10 @@ public class Welcome {
 	public static void menuGuestInfo(String name, int mobile) {
 		System.out.println("현재 고객 정보 : ");
 		//System.out.println("이름 : "+ name+ " 연락처 : "+mobile);
-		Person person = new Person(name, mobile);
-		System.out.println("이름 "+person.getNmae()+" 연락처 "+person.getPhone());
+		//Person person = new Person(name, mobile);
+		//System.out.println("이름 "+person.getNmae()+" 연락처 "+person.getPhone());
+		System.out.println("이름 "+mUser.getNmae()+" 연락처 "+mUser.getPhone());
+		
 	}
 	public static void menuCartItemList() {
 		System.out.println("장바구니 장품 목록");
