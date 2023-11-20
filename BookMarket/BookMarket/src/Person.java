@@ -17,7 +17,7 @@ public class Person {
 		this.address = address;
 	}
 	
-	public String getNmae() {
+	public String getName() {
 		return name;
 	}
 	public void setNmae(String name) {
@@ -37,6 +37,6 @@ public class Person {
 	    this.address = address;
 	}
 
-
+	
 	
 }
