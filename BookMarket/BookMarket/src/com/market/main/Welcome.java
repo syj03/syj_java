@@ -333,8 +333,6 @@ public class Welcome {
 		System.out.println("\t\t\t주문 총금액 : "+sum+"원\n");
 		System.out.println("---------------------------------------");
 		System.out.println();
-		
-		
 	}
 }
 
