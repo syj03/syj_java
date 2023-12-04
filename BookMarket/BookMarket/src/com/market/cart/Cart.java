@@ -57,9 +57,9 @@ public class Cart implements CartInterface {
 	}
 	public boolean isCartInBook(String bookId) {
 		boolean flag = false;
-		for (int i = 0; i < mCartCount; i++){
-			if (bookId == mCartItem[i].getBookID()) {
-				mCartItem[i].setQuantity(mCartItem[i].getQuantity()+1);
+		for (int i = 0; i < mCartItem.size(); i++){
+			if (bookId.equals(mCartItem.get(i).getBookID())) {
+				mCartItem.get(i).setQuantity(mCartItem.get(i).getQuantity()+1);
 				flag = true;
 			}
 		}
@@ -67,13 +67,8 @@ public class Cart implements CartInterface {
 	}
 		
 	public void removeCart(int numId) {
-		CartItem[] cartItem = new CartItem[NUM_BOOK];
-		int num = 0;
-		for (int i = 0; i < mCartCount; i++) 
-			if (numId != i) 
-				cartItem[num++] = mCartItem[i];
-		mCartCount = num;
-		mCartItem = cartItem;
+		mCartItem.remove(numId);
+		mCartCount = mCartItem.size();
 		
 	}
 
