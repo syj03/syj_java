@@ -9,7 +9,6 @@ public class Person {
 	public Person(String name, int phone) {
 		this.name = name;
 		this.phone = phone;
-		
 	}
 	
 	public Person(String name, int phone, String address) {

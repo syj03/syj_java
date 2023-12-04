@@ -7,7 +7,4 @@ public interface CartInterface {
 	void insertBook(Book p);
 	void removeCart(int numId);
 	void deleteBook();
-	
-	
-
 }

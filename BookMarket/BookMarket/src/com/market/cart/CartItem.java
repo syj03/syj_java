@@ -3,7 +3,7 @@ import com.market.bookitem.Book;
 
 public class CartItem {
 	//private String[] itemBook = new String[7];
-	
+
 	private Book itemBook;
 	private String bookID;
 	private int quantity;

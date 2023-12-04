@@ -8,7 +8,6 @@ public class Cart implements CartInterface {
 	public static int mCartCount = 0;
 	
 	public Cart() {
-		
 	}
 	public void printBookList(Book[] booklist) {
 		for (int i = 0; i < booklist.length; i++) {

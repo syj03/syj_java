@@ -179,8 +179,6 @@ public class Welcome {
 			Scanner input = new Scanner(System.in);
 			String str= input.nextLine();
 			
-			
-			
 			boolean flag = false;
 			int numId = -1;
 			
