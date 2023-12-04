@@ -46,7 +46,6 @@ public class Welcome {
 		mUser = new User(userName,userMobile);
 		boolean quit = false;
 		
-		
 		while (!quit) {
 			System.out.println("**********************************************");
 			System.out.println("\t"+welcome_shoppingmall);
